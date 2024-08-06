@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>hvv总结 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="信息搜集1对于相关目标，首先通过ping收集ip信息，利用censys搜集端口信息，利用daydaymap进行c段相关资产的查询。尤其关注iconhash来找到相关cms，框架平台现成poc漏洞。敏感的端口信息包括不常见的http端口，8848 nacos（漏洞存在很多）。2c段的探测也比较重要，一些不成熟的平台不会直接部署在官网平台上，从c段和不常见端口往往更容易打进去。薄弱资产往往c段ip加减">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hvv总结">
+<meta property="og:url" content="http://example.com/2024/08/04/hvv%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="信息搜集1对于相关目标，首先通过ping收集ip信息，利用censys搜集端口信息，利用daydaymap进行c段相关资产的查询。尤其关注iconhash来找到相关cms，框架平台现成poc漏洞。敏感的端口信息包括不常见的http端口，8848 nacos（漏洞存在很多）。2c段的探测也比较重要，一些不成熟的平台不会直接部署在官网平台上，从c段和不常见端口往往更容易打进去。薄弱资产往往c段ip加减">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-08-04T03:36:17.000Z">
+<meta property="article:modified_time" content="2024-08-04T03:46:54.366Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="hvv">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-hvv总结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/08/04/hvv%E6%80%BB%E7%BB%93/" class="article-date">
+  <time class="dt-published" datetime="2024-08-04T03:36:17.000Z" itemprop="datePublished">2024-08-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      hvv总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="信息搜集"><a href="#信息搜集" class="headerlink" title="信息搜集"></a>信息搜集</h2><p>1对于相关目标，首先通过ping收集ip信息，利用censys搜集端口信息，利用daydaymap进行c段相关资产的查询。尤其关注iconhash来找到相关cms，框架平台现成poc漏洞。敏感的端口信息包括不常见的http端口，8848 nacos（漏洞存在很多）。<br>2c段的探测也比较重要，一些不成熟的平台不会直接部署在官网平台上，从c段和不常见端口往往更容易打进去。薄弱资产往往c段ip加减5加减10来搜集<br>3nacos可以使用工具一把梭。当存在7848端口时更会存在内存马注入。一般404才可能存在这些漏洞。然后加上nacos才能访问<br>信息收集要综合利用工具，可以用备案号查找子公司以获得目标的资产架构，鹰图，<br>一些网站的视频里面往往也会包含一些测试账号和密码</p>
+<h2 id="钓鱼技巧"><a href="#钓鱼技巧" class="headerlink" title="钓鱼技巧"></a>钓鱼技巧</h2><p>获取到敏感信息后，要勇敢，伪装管理下发通知，伪装用户丢失密码，伪装领导。利用零零信安可以查找公司邮箱实现钓鱼 </p>
+<h2 id="打点爆破技巧"><a href="#打点爆破技巧" class="headerlink" title="打点爆破技巧"></a>打点爆破技巧</h2><p>4路径探测技巧：首先最好是爆破一下敏感文件如git 获取源码，根据作者搜索GitHub，隐藏的相关特征判断cms如报错回显<br>一个接口post访问，改成get返回不是404 但是get不存在的路由为404什么的，就说明可以利用get  fuzz，利用服务器回显状态码就行判断。<br>根据命名风格编写脚本生成字典，如某系统zbzl 招聘转录，rssy人事系统，就可以用四字字母进行爆破。</p>
+<h2 id="后续学习："><a href="#后续学习：" class="headerlink" title="后续学习："></a>后续学习：</h2><p>字典生成，根据目前遇到的基本不会有弱口令，而是一种人名首字母加  . _ @ # 加上身份证号，手机号的组合。现在的新式弱口令是姓名首字母@123  admin@123等，可以利用字典生成工具实现自己的工具</p>
+<h2 id="FUZZ技巧"><a href="#FUZZ技巧" class="headerlink" title="FUZZ技巧"></a>FUZZ技巧</h2><p>比如前端get传参很乱，但是可以尝试FUZZ进行爆破，更节省时间更加高效。<br><a target="_blank" rel="noopener" href="https://rszpxt.jzmu.edu.cn/json/ssp_hdc_search?body=cmd=204&viewid=83712&date=20190901110215&yzm=7958a94e6e3150baf3a9f61ec5aa2870">https://rszpxt.jzmu.edu.cn/json/ssp_hdc_search?body=cmd=204&amp;viewid=83712&amp;date=20190901110215&amp;yzm=7958a94e6e3150baf3a9f61ec5aa2870</a><br>对于view-id,cmd进行爆破。<br>直接对一个路由进行参数名，参数内容进行爆破。</p>
+<h2 id="前端代码审计"><a href="#前端代码审计" class="headerlink" title="前端代码审计"></a>前端代码审计</h2><p>关注：<br>1 源代码，html中的信息泄露，比如框架版本，本次护网就存在修改前端已经被注释的代码，获得了体验账号从而拿下网站。<br>2.fiddler抓包，关注传递的api，利用全局搜索查看使用接口，这样会有越权利用的可能。js代码文件中会有数据，操作，加密方式的接口，往往也需要关注。前端js可以通过控制台进行相关参数的改写，从而绕过一些关键的判断，还有加密前的原始内容。Ctrl+shift+delete 可以清除缓存，缓存可能会影响js代码的正常执行。在fiddler抓包时候触发相关的js代码，这部分会更加重要，不需要再无关代码中浪费过多时间。<br>3.关注动态的一些前端的执行代码，比如利用开发者工具的选中按钮功能看看会动态触发什么东西<br>关注resetpassword   register功能</p>
+<h2 id="后端代码审计"><a href="#后端代码审计" class="headerlink" title="后端代码审计"></a>后端代码审计</h2><p>关注关键函数的执行，有没有被锁死<br>关注一些危险组件的利用</p>
+<h2 id="waf绕过"><a href="#waf绕过" class="headerlink" title="waf绕过"></a>waf绕过</h2><p>1.图片马插入大一些的图片，这样可以利用较多的脏数据绕过waf的检测<br>2.上传jsp木马，进行getshell，要注意加密，不然会被杀。<br>3.waf检测可能会封一小段时间，然后就恢复正常</p>
+<h2 id="现成poc利用"><a href="#现成poc利用" class="headerlink" title="现成poc利用"></a>现成poc利用</h2><p>1.要对应好版本然后可以利用nuclei 综合利用工具，挂载在fiddle代理上查看攻击流量确认攻击是否成功。</p>
+<h2 id="内网攻击"><a href="#内网攻击" class="headerlink" title="内网攻击"></a>内网攻击</h2><p>注意敏感信息<br>了解网络拓扑</p>
+<h2 id="oa系统利用"><a href="#oa系统利用" class="headerlink" title="oa系统利用"></a>oa系统利用</h2><p>oa拿下可以实施钓鱼，查看公司历史vpn信息，通过历史文件猜解密码等等</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/08/04/hvv%E6%80%BB%E7%BB%93/" data-id="clzi2bxte0000ecuz5j9gbhsb" data-title="hvv总结" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hvv/" rel="tag">hvv</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hvv/" rel="tag">hvv</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/hvv/" style="font-size: 10px;">hvv</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/08/04/hvv%E6%80%BB%E7%BB%93/">hvv总结</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
